@@ -9,6 +9,9 @@ const app = express();
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
+const zoomMeetingsRouter = require('./routes/zoomMeetings.js');
+app.use('/zoom', zoomMeetingsRouter);
+
 app.listen(process.env.PORT || 3000, () => {
 	console.log(`Listening at https://localhost:${process.env.PORT || 3000}/`);
 });
