@@ -13,4 +13,8 @@ router.post('/signature', (req, res, next) => {
 	res.json({ signature });
 });
 
+router.get('/meeting', (req, res, next) => {
+	res.render('meetingForm.pug');
+});
+
 module.exports = router;

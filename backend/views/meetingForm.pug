@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+html(lang="en")
+	head
+		meta(charset="UTF-8")
+		meta(name="viewport", content="width=device-width, initial-scale=1.0")
+		title Meeting Form
+	body
+		form(action="/zoom/meeting", method="post")
+			label(for="userName") Username
+			input#userName(type="text", name="userName")
+
+			label(for="meetingNumber") Meeting Number
+			input#meetingNumber(type="text", name="meetingNumber")
+
+			label(for="passWord") Password
+			input#passWord(type="text", name="passWord")
+
+			label(for="role") Role
+			select#role(name="role")
+				option(value="0") Attendee
+				option(value="1") Host
+
+			button(type="submit") Join meeting
