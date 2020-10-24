@@ -13,8 +13,36 @@ router.post('/signature', (req, res, next) => {
 	res.json({ signature });
 });
 
+// render meeting form to get data
 router.get('/meeting', (req, res, next) => {
 	res.render('meetingForm.pug');
+});
+
+// actual zoom meeting rendered
+router.post('/meeting', (req, res, next) => {
+	const { meetingNumber, userName, role, passWord } = req.body;
+	const signature = generateSignature(
+		process.env.API_KEY,
+		process.env.API_SECRET,
+		meetingNumber,
+		role
+	);
+
+	const meetingConfig = {
+		signature,
+		apiKey: process.env.API_KEY,
+		meetingNumber,
+		userName,
+		role,
+		passWord,
+		leaveUrl: 'http://localhost:3000/zoom/meeting',
+	};
+	console.log({
+		meetingConfigString: `${JSON.stringify(meetingConfig)}`,
+	});
+	res.render('meeting.pug', {
+		meetingConfigString: `${JSON.stringify(meetingConfig)}`,
+	});
 });
 
 module.exports = router;

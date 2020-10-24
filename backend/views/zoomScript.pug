@@ -1,0 +1,64 @@
+script.
+  'use strict';
+  console.log('hello js');
+  window.addEventListener('DOMContentLoaded', () => {
+    ZoomMtg.setZoomJSLib(
+      'https://dmogdx0jrul3u.cloudfront.net/1.8.1/lib',
+      '/av'
+    );
+    ZoomMtg.preLoadWasm();
+    ZoomMtg.prepareJssdk();
+
+    const meetingConfig = JSON.parse(`!{locals.meetingConfigString}`);
+    joinZoomMeeting();
+    // const meetingConfig = {
+    //   apiKey: 'd45mdNpOTO2Ahm4zEzDTQA',
+    //   meetingNumber: '74743160020',
+    //   userName: 'lol',
+    //   role: 0,
+    //   leaveUrl: 'http://www.zoom.us/',
+    //   password: 'EQmm87',
+    // };
+
+    function joinZoomMeeting() {
+      const {
+        signature,
+        apiKey,
+        meetingNumber,
+        userName,
+        passWord,
+        leaveUrl,
+        role,
+      } = meetingConfig;
+      console.log({
+        signature,
+        apiKey,
+        meetingNumber,
+        userName,
+        passWord,
+        leaveUrl,
+        role,
+      });
+
+      ZoomMtg.init({
+        debug: true,
+        leaveUrl,
+        success: function () {
+          ZoomMtg.join({
+            signature,
+            apiKey,
+            meetingNumber,
+            userName,
+            passWord,
+            success: success => console.log(success),
+            error(res) {
+              console.log(res);
+            },
+          });
+        },
+        error: function (err) {
+          console.error(err);
+        },
+      });
+    }
+  });
