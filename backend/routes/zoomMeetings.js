@@ -37,9 +37,7 @@ router.post('/meeting', (req, res, next) => {
 		passWord,
 		leaveUrl: 'http://localhost:3000/zoom/meeting',
 	};
-	console.log({
-		meetingConfigString: `${JSON.stringify(meetingConfig)}`,
-	});
+	
 	res.render('meeting.pug', {
 		meetingConfigString: `${JSON.stringify(meetingConfig)}`,
 	});
