@@ -35,7 +35,7 @@ router.post('/meeting', (req, res, next) => {
 		userName,
 		role,
 		passWord,
-		leaveUrl: 'http://localhost:3000/zoom/meeting',
+		leaveUrl: `${req.protocol}://${req.get('host')}/zoom/meeting`,
 	};
 	
 	res.render('meeting.pug', {
