@@ -1,0 +1,110 @@
+:root {
+	--divider-size: 5px;
+}
+
+html {
+	box-sizing: border-box;
+	font-family: 'Lato', 'Lucida Grande', 'Lucida Sans Unicode', Tahoma,
+		Sans-Serif;
+	font-weight: normal;
+	text-shadow: 0 2px 0 rgba(0, 0, 0, 0.07);
+}
+
+*,
+*:before,
+*:after {
+	box-sizing: inherit;
+}
+
+body {
+	margin: 0;
+	color: white;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	font-weight: normal;
+	margin: 0;
+	font-size: 1.5em;
+}
+
+.main-grid {
+	height: 100vh;
+	width: 100vw;
+
+	display: grid;
+	grid-template-rows: 1fr auto 1fr;
+	grid-template-columns: 1fr auto 1fr;
+	grid-template-areas:
+		'meeting divider--vr notes'
+		'divider--hr divider--vr notes'
+		'hud divider--vr notes';
+}
+
+.main-grid > * {
+	width: 100%;
+	height: 100%;
+}
+
+/* DIVIDERS */
+
+.divider {
+	background-color: black;
+}
+
+.divider--hr {
+	grid-area: divider--hr;
+
+	height: var(--divider-size);
+}
+
+.divider--hr:hover {
+	cursor: ns-resize;
+}
+
+.divider--vr {
+	grid-area: divider--vr;
+
+	width: var(--divider-size);
+}
+
+.divider--vr:hover {
+	cursor: ew-resize;
+}
+
+/* MEETING CONTAINER */
+
+.meeting {
+	grid-area: meeting;
+
+	background-color: pink;
+}
+
+.meeting iframe {
+	width: 100%;
+	height: 100%;
+}
+
+.meeting iframe.no-mouse-events {
+	pointer-events: none;
+}
+
+/* HUD CONTAINER */
+
+.hud {
+	grid-area: hud;
+
+	background-color: red;
+}
+
+/* NOTES CONTAINER */
+
+.notes {
+	grid-area: notes;
+
+	background-color: green;
+}
