@@ -30,14 +30,14 @@ window.addEventListener('DOMContentLoaded', () => {
 				mainGrid.style.gridTemplateRows = `
 					${e.clientY - mainGrid.offsetTop}px 
 					5px 
-					${mainGrid.offsetHeight - e.clientY - 5}px
+					1fr
 				`;
 			} else if (isDraggingVR) {
 				// vertical resize
 				mainGrid.style.gridTemplateColumns = `
 					${e.clientX - mainGrid.offsetLeft}px 
 					5px 
-					${mainGrid.offsetWidth - e.clientX - 5}px
+					1fr
 				`;
 			}
 		}
