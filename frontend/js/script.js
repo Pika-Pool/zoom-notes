@@ -2,7 +2,8 @@ window.addEventListener('DOMContentLoaded', () => {
 	const mainGrid = document.querySelector('.main-grid');
 	const dividerHR = mainGrid.querySelector('.divider--hr');
 	const dividerVR = mainGrid.querySelector('.divider--vr');
-	const iframe = mainGrid.querySelector('iframe');
+
+	const meetingIframe = document.getElementById('meeting--iframe');
 
 	// keep track if a divider is being dragged
 	let isDraggingHR = false,
@@ -17,13 +18,25 @@ window.addEventListener('DOMContentLoaded', () => {
 		mainGrid.gridTemplate = '1fr 5px 1fr / 1fr 5px 1fr';
 	}
 
+	// add or remove meeting iframe pointer/mouse events
+	const iframeMouseEvents = {
+		disable: () => {
+			if (!meetingIframe) return;
+			meetingIframe.classList.add('no-mouse-events');
+		},
+		enable: () => {
+			if (!meetingIframe) return;
+			meetingIframe.classList.remove('no-mouse-events');
+		},
+	};
+
 	function onDrag(e) {
 		if (isDraggingHR || isDraggingVR) {
 			e.preventDefault();
 
 			// prevent pointer events on iframe
 			// so the mousemove event on this window is fired
-			iframe.classList.add('no-mouse-events');
+			iframeMouseEvents.disable();
 
 			if (isDraggingHR) {
 				// horizontal resize
@@ -44,7 +57,7 @@ window.addEventListener('DOMContentLoaded', () => {
 	}
 
 	function endDrag() {
-		iframe.classList.remove('no-mouse-events');
+		iframeMouseEvents.enable();
 		setCursor('auto');
 
 		isDraggingHR = false;
