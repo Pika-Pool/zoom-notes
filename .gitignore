@@ -1,3 +1,6 @@
+# icon svg used to create fonts
+frontend/icons/*.svg
+
 # vscode
 /**/.vscode/
 
