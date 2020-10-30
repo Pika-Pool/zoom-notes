@@ -15,7 +15,16 @@ window.addEventListener('DOMContentLoaded', () => {
 
 	// reset layout to original
 	function resetGrid() {
-		mainGrid.gridTemplate = '1fr 5px 1fr / 1fr 5px 1fr';
+		resetGridColumns();
+		resetGridRows();
+	}
+
+	function resetGridColumns() {
+		mainGrid.style.gridTemplateColumns = '1fr 5px 1fr';
+	}
+
+	function resetGridRows() {
+		mainGrid.style.gridTemplateRows = '1fr 5px 1fr';
 	}
 
 	// add or remove meeting iframe pointer/mouse events
@@ -66,11 +75,13 @@ window.addEventListener('DOMContentLoaded', () => {
 
 	// EVENT LISTENERS
 
+	dividerHR.addEventListener('dblclick', resetGridRows);
 	dividerHR.addEventListener('mousedown', () => {
 		isDraggingHR = true;
 		setCursor('ns-resize');
 	});
 
+	dividerVR.addEventListener('dblclick', resetGridColumns);
 	dividerVR.addEventListener('mousedown', () => {
 		isDraggingVR = true;
 		setCursor('ew-resize');
