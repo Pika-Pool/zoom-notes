@@ -105,5 +105,64 @@ h6 {
 .notes {
 	grid-area: notes;
 
-	background-color: green;
+	display: grid;
+	grid-template-rows: auto auto 1fr;
+}
+
+.notes--options,
+.notes--toolbar {
+	--flex-gap-size: 0.45rem;
+
+	display: flex;
+	flex-wrap: wrap;
+
+	padding: 0 calc(var(--flex-gap-size) / 2);
+
+	background-color: whitesmoke;
+	border-bottom: 2px solid black;
+}
+
+.notes--options > *,
+.notes--toolbar > * {
+	margin: calc(var(--flex-gap-size) / 2);
+}
+
+/* EDITOR */
+
+.notes--editor {
+	--line-height: 1.4rem;
+	--font-size: 1rem;
+
+	display: grid;
+	grid-template: 1fr / 1fr;
+
+	padding: 0.5rem;
+	margin-bottom: 1rem;
+
+	overflow-y: scroll;
+}
+
+.editor--input {
+	font-size: var(--font-size);
+	line-height: var(--line-height);
+
+	border-bottom: 2px solid black;
+}
+
+/* BUTTONS */
+
+.button {
+	font-size: 1rem;
+	text-transform: uppercase;
+	letter-spacing: 2px;
+
+	padding: 0.5rem;
+
+	background-color: transparent;
+	border: none;
+	border-radius: 15%;
+}
+
+.button:hover {
+	background-color: rgba(0, 0, 0, 0.1);
 }

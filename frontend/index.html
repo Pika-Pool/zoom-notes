@@ -5,19 +5,36 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Zoom Notes</title>
+
 	<link rel="stylesheet" href="./stylesheets/style.css">
+	<link rel="stylesheet" href="./icons/iconStyle.css">
 </head>
 
 <body>
 
 	<main class="main-grid">
 		<div class="meeting">
-			<iframe id="meeting--iframe" src="http://localhost:3000/zoom/meeting" frameborder="0"></iframe>
+			<!-- <iframe id="meeting--iframe" src="http://localhost:3000/zoom/meeting" frameborder="0"></iframe> -->
 		</div>
 		<div class="divider divider--hr"></div>
 		<div class="hud"></div>
 		<div class="divider divider--vr"></div>
-		<div class="notes"></div>
+		<div class="notes">
+			<section class="notes--options">
+				<button class="button">Copy</button>
+			</section>
+
+			<section class="notes--toolbar">
+				<button class="button icon-bold"></button>
+				<button class="button icon-italic"></button>
+				<button class="button icon-unordered-list"></button>
+				<button class="button icon-ordered-list"></button>
+			</section>
+
+			<section class="notes--editor">
+				<div class="editor--input" contenteditable="true"></div>
+			</section>
+		</div>
 	</main>
 
 	<script src="./js/script.js"></script>
