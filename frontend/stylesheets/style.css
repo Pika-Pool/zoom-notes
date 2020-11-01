@@ -146,7 +146,19 @@ h6 {
 	font-size: var(--font-size);
 	line-height: var(--line-height);
 
+	padding: 0.5rem;
+
 	border-bottom: 2px solid black;
+}
+
+.editor--input:focus {
+	outline: none;
+	border: 2px solid black;
+	border-radius: 10px;
+}
+
+.editor--input > * {
+	margin: 0;
 }
 
 /* BUTTONS */
@@ -174,4 +186,3 @@ h6 {
 .button__drop-down {
 	max-width: 50px;
 }
-
