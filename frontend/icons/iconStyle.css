@@ -1,10 +1,10 @@
 @font-face {
-	font-family: 'icons';
-	src: url('fonts/icomoon.eot?gddfti');
-	src: url('fonts/icomoon.eot?gddfti#iefix') format('embedded-opentype'),
-		url('fonts/icomoon.ttf?gddfti') format('truetype'),
-		url('fonts/icomoon.woff?gddfti') format('woff'),
-		url('fonts/icomoon.svg?gddfti#icomoon') format('svg');
+	font-family: 'icomoon';
+	src: url('fonts/icomoon.eot?s31ex9');
+	src: url('fonts/icomoon.eot?s31ex9#iefix') format('embedded-opentype'),
+		url('fonts/icomoon.ttf?s31ex9') format('truetype'),
+		url('fonts/icomoon.woff?s31ex9') format('woff'),
+		url('fonts/icomoon.svg?s31ex9#icomoon') format('svg');
 	font-weight: normal;
 	font-style: normal;
 	font-display: block;
@@ -13,7 +13,7 @@
 [class^='icon-'],
 [class*=' icon-'] {
 	/* use !important to prevent issues with browser extensions that change fonts */
-	font-family: 'icons' !important;
+	font-family: 'icomoon' !important;
 	speak: never;
 	font-style: normal;
 	font-weight: normal;
@@ -26,8 +26,86 @@
 	-moz-osx-font-smoothing: grayscale;
 }
 
+.icon-colour [class^='path'] {
+	position: relative;
+}
+
+.icon-colour [class^='path']:before {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
+
+.icon-colour .path1:before {
+	content: '\e905';
+	color: rgb(9, 161, 229);
+}
+.icon-colour .path2:before {
+	content: '\e906';
+	color: rgb(150, 43, 124);
+}
+.icon-colour .path3:before {
+	content: '\e907';
+	color: rgb(255, 146, 89);
+}
+.icon-colour .path4:before {
+	content: '\e908';
+	color: rgb(62, 195, 255);
+}
+.icon-colour .path5:before {
+	content: '\e909';
+	color: rgb(73, 178, 150);
+}
+.icon-colour .path6:before {
+	content: '\e90a';
+	color: rgb(7, 124, 204);
+}
+.icon-colour .path7:before {
+	content: '\e90b';
+	color: rgb(40, 151, 177);
+}
+.icon-colour .path8:before {
+	content: '\e90c';
+	color: rgb(137, 194, 71);
+}
+.icon-colour .path9:before {
+	content: '\e90d';
+	color: rgb(98, 40, 118);
+}
+.icon-colour .path10:before {
+	content: '\e90e';
+	color: rgb(203, 46, 129);
+}
+.icon-colour .path11:before {
+	content: '\e90f';
+	color: rgb(255, 81, 120);
+}
+.icon-colour .path12:before {
+	content: '\e910';
+	color: rgb(255, 210, 59);
+}
+.icon-colour .path13:before {
+	content: '\e911';
+	color: rgb(9, 161, 229);
+}
+.icon-colour .path14:before {
+	content: '\e912';
+	color: rgb(255, 210, 59);
+}
+.icon-colour .path15:before {
+	content: '\e913';
+	color: rgb(255, 49, 135);
+}
+.icon-colour .path16:before {
+	content: '\e914';
+	color: rgb(255, 81, 120);
+}
 .icon-bold:before {
 	content: '\e900';
+}
+.icon-center-align:before {
+	content: '\e917';
 }
 .icon-copy:before {
 	content: '\e901';
@@ -35,8 +113,17 @@
 .icon-italic:before {
 	content: '\e902';
 }
+.icon-left-align:before {
+	content: '\e918';
+}
 .icon-ordered-list:before {
 	content: '\e903';
+}
+.icon-right-align:before {
+	content: '\e919';
+}
+.icon-underline:before {
+	content: '\e91a';
 }
 .icon-unordered-list:before {
 	content: '\e904';
