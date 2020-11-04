@@ -4,20 +4,86 @@ html(lang="en")
 		meta(charset="UTF-8")
 		meta(name="viewport", content="width=device-width, initial-scale=1.0")
 		title Meeting Form
+
+		style.
+			*, *::after, *::before {
+				box-sizing: border-box;
+				margin: 0;
+				padding: 0;
+			}
+			body {
+				background: white;
+				min-height: 100vh;
+				
+				display: flex;
+				justify-content: center;
+				align-items: center;
+			}
+
+			form {
+				display: flex;
+				flex-direction: column;
+				padding: 10px;
+
+				width: 90vw;
+				max-width: 350px;
+			}
+
+			.input-block {
+				width: 100%;
+			}
+
+			.input-block:not(:last-child) {
+				margin-bottom: 1rem;
+			}
+
+			.input-block > input {
+				width: 100%;
+				font-size: 0.9rem;
+				padding: 3px 5px;
+
+				border: 2px solid #00000066;
+				outline: none;
+			}
+
+			.input-block > input:focus {
+				border-color: #000;
+			}
+
+			button[type="submit"] {
+				width: 90%;
+				margin: 0 auto;
+				font-size: 1rem;
+				padding: 10px 5px;
+
+				border: none;
+				outline: none;
+				border: 2px solid black;
+				border-radius: 20px;
+				cursor: pointer;
+			}
+
+			button[type="submit"]:active {
+				transform: scale(0.96);
+			}
 	body
 		form(action="/zoom/meeting", method="post")
-			label(for="userName") Username
-			input#userName(type="text", name="userName")
+			.input-block
+				label(for="userName") Username
+				input#userName(type="text", name="userName" required)
 
-			label(for="meetingNumber") Meeting Number
-			input#meetingNumber(type="text", name="meetingNumber")
+			.input-block
+				label(for="meetingNumber") Meeting Number
+				input#meetingNumber(type="text", name="meetingNumber" required)
 
-			label(for="passWord") Password
-			input#passWord(type="text", name="passWord")
+			.input-block
+				label(for="passWord") Password
+				input#passWord(type="text", name="passWord" required)
 
-			label(for="role") Role
-			select#role(name="role")
-				option(value="0") Attendee
-				option(value="1") Host
+			//- .input-block
+			//- 	label(for="role") Role
+			//- 	select#role(name="role")
+			//- 		option(value="0") Attendee
+			//- 		option(value="1") Host
 
 			button(type="submit") Join meeting
