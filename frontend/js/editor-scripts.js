@@ -94,7 +94,7 @@ function showNote(note) {
 
 function saveNote() {
 	const currNoteName = noteNameInput.value;
-	if (notes[currNoteName]) return alert('Note with that name already exists');
+	if (notes[currNoteName] && !confirm('This will overwrite the existing note.\nContinue?')) return;
 	if (currNoteName.trim() === '') return alert('Note must have a name');
 
 	notes[currNoteName] = {
