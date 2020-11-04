@@ -11,7 +11,7 @@ module.exports.generateSignature = function (
 	apiKey,
 	apiSecret,
 	meetingNumber,
-	role
+	role = 0
 ) {
 	// Prevent time sync issue between client signature generation and zoom
 	const timestamp = new Date().getTime() - 30000;
