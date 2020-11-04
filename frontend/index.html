@@ -21,8 +21,21 @@
 		<div class="divider divider--vr"></div>
 		<div class="notes">
 			<section class="notes--options">
+				<div class="note-name">
+					<label for="note-name--input">
+						<input type="text" class="note-name--input" id="note-name--input" required>
+					</label>
+					<ul class="note--list">
+						<li class="note">hello - 04/11/2020</li>
+						<li class="note">hello - 04/11/2020</li>
+						<li class="note">hello - 04/11/2020</li>
+						<li class="note">hello - 04/11/2020</li>
+						<li class="note">hello - 04/11/2020</li>
+					</ul>
+					<button class="button note--list__show">&#9660;</button>
+				</div>
 				<button class="button" onclick="formatDoc('copy')">Copy</button>
-				<button class="button" id="btn-save" onclick="saveChanges()">Save</button>
+				<button class="button" id="btn-save">Save</button>
 			</section>
 
 			<section class="notes--toolbar">
