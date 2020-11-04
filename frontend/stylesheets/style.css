@@ -96,8 +96,10 @@ h6 {
 
 .hud {
 	grid-area: hud;
-
-	background-color: red;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
 }
 
 /* NOTES CONTAINER */
